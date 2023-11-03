@@ -1,0 +1,31 @@
+{
+  "Server": {
+    "Folder": "./",
+    "Version": "1.19.2",
+    "Protocol": 764
+  },
+  "Commands": {
+    "StartServer": "java <Commands.StartServerParam> @libraries/net/minecraftforge/forge/1.19.2-43.3.2/unix_args.txt",
+    "StartServerParam": "-Xmx3072M -Xms3072M",
+    "StopServer": "stop",
+    "StopServerAllowKill": 10
+  },
+  "Msh": {
+    "Debug": 1,
+    "ID": "13076cc6571154e5319d01a85debde86033479a7",
+    "MshPort": 25555,
+    "MshPortQuery": 25555,
+    "EnableQuery": true,
+    "TimeBeforeStoppingEmptyServer": 180,
+    "SuspendAllow": false,
+    "SuspendRefresh": -1,
+    "InfoHibernation": "                   §fserver status:\n                   §b§lHIBERNATING",
+    "InfoStarting": "                   §fserver status:\n                    §6§lWARMING UP",
+    "NotifyUpdate": true,
+    "NotifyMessage": true,
+    "Whitelist": [],
+    "WhitelistImport": false,
+    "ShowResourceUsage": false,
+    "ShowInternetUsage": false
+  }
+}
