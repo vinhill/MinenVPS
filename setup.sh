@@ -15,3 +15,6 @@ java -jar forge-1.19.2-43.3.2-installer.jar --installServer
 echo "eula=true" > eula.txt
 rm user_jvm_args.txt
 # optionally copy mods to ./mods
+
+# make backup dir for ./backup.sh script
+mkdir backups
