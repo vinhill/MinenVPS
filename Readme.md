@@ -27,12 +27,19 @@ Config for MSH, specifies how to start the server, also how much RAM the JVM sho
 
 ## cronjobs
 
-# run on boot
+- run on boot
+```
 @reboot su - minecraft -c '/home/minecraft/start.sh' > /dev/null 2>&1
-# backup daily 4:30 AM
+```
+- backup daily 4:30 AM
+```
 30 4 * * * /home/minecraft/backup.sh > /dev/null 2>&1
-# monitor server daily 5:30 AM
+```
+
+-monitor server daily 5:30 AM
+```
 30 5 * * * /home/minecraft/monitor.sh > /dev/null 2>&1
+```
 
 ## start.sh
 
