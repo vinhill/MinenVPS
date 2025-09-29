@@ -1,11 +1,11 @@
 {
   "Server": {
     "Folder": "./",
-    "Version": "1.19.2",
+    "Version": "1.21.8",
     "Protocol": 764
   },
   "Commands": {
-    "StartServer": "java <Commands.StartServerParam> @libraries/net/minecraftforge/forge/1.19.2-43.3.2/unix_args.txt",
+    "StartServer": "java <Commands.StartServerParam> @libraries/net/minecraftforge/forge/1.21.8-58.1.0/unix_args.txt",
     "StartServerParam": "-Xmx3072M -Xms3072M",
     "StopServer": "stop",
     "StopServerAllowKill": 10
