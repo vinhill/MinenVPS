@@ -5,4 +5,4 @@
 #  pass them to this script directly
 export JAVA_HOME=/home/minecraft/jdk-21.0.1
 export PATH=$JAVA_HOME/bin:$PATH
-java @user_jvm_args.txt @libraries/net/minecraftforge/forge/1.19.2-43.3.2/unix_args.txt "$@"
+java @user_jvm_args.txt @libraries/net/minecraftforge/forge/1.21.8-58.1.0/unix_args.txt "$@"

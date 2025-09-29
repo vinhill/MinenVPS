@@ -12,7 +12,6 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 # setup forge minecraft server
 wget https://maven.minecraftforge.net/net/minecraftforge/forge/1.21.8-58.1.0/forge-1.21.8-58.1.0-installer.jar
-wget 
 java -jar forge-1.21.8-58.1.0-installer.jar --installServer
 rm forge-1.21.8-58.1.0-installer.jar
 echo "eula=true" > eula.txt
