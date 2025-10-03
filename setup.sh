@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 # get minecraft-server-hibernation
 wget -O msh.bin https://github.com/gekware/minecraft-server-hibernation/releases/download/v2.5.0/msh-v2.5.0-0876091-linux-amd64.bin
@@ -9,7 +9,7 @@ wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
 tar -xvf jdk-21_linux-x64_bin.tar.gz
 rm -f jdk-21_linux-x64_bin.tar.gz
 
-. "$(dirname "$0")/common.sh"
+source "$(dirname "$0")/common.sh"
 
 # setup forge minecraft server
 wget -O "forge-installer.jar" https://maven.minecraftforge.net/net/minecraftforge/forge/${FORGE_VERSION}/forge-${FORGE_VERSION}-installer.jar
