@@ -1,22 +1,28 @@
 #!/bin/bash
 
 # get minecraft-server-hibernation
-wget -O msh.bin https://github.com/gekware/minecraft-server-hibernation/releases/download/v2.5.0/msh-v2.5.0-0876091-linux-amd64.bin
-chmod +x msh.bin
+if [[ ! -x "${BASE_DIR}/msh.bin" ]]; then
+    wget -O msh.bin https://github.com/gekware/minecraft-server-hibernation/releases/download/v2.5.0/msh-v2.5.0-0876091-linux-amd64.bin
+    chmod +x msh.bin
+fi
 
 # setup local installation of java
-wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
-tar -xvf jdk-21_linux-x64_bin.tar.gz
-rm -f jdk-21_linux-x64_bin.tar.gz
+if [[ ! -d "${BASE_DIR}/jdk-21"* ]]; then
+    wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
+    tar -xvf jdk-21_linux-x64_bin.tar.gz
+    rm -f jdk-21_linux-x64_bin.tar.gz
+fi
 
 source "$(dirname "$0")/common.sh"
 
 # setup forge minecraft server
-wget -O "forge-installer.jar" https://maven.minecraftforge.net/net/minecraftforge/forge/${FORGE_VERSION}/forge-${FORGE_VERSION}-installer.jar
-java -jar forge-installer.jar --installServer
-rm -f forge-installer.jar
-echo "eula=true" > eula.txt
-rm -f user_jvm_args.txt
+if [[ ! -d "${BASE_DIR}/libraries/net/minecraftforge/forge/${FORGE_VERSION}" ]]; then
+    wget -O "forge-installer.jar" https://maven.minecraftforge.net/net/minecraftforge/forge/${FORGE_VERSION}/forge-${FORGE_VERSION}-installer.jar
+    java -jar forge-installer.jar --installServer
+    rm -f forge-installer.jar
+    echo "eula=true" > eula.txt
+    rm -f user_jvm_args.txt
+fi
 
 # Update msh-config.json StartServer path
 sed -E -i 's#(@libraries/net/minecraftforge/forge/)[^/]+(/unix_args.txt)#\1'"$FORGE_VERSION"'\2#g' msh-config.json
