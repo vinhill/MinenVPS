@@ -1,8 +1,11 @@
 #!/usr/bin/env sh
-export JAVA_HOME=/home/minecraft/jdk-21.0.1
-export PATH=$JAVA_HOME/bin:$PATH
+
+source "$(dirname "$0")/common.sh"
+
+# quiet exit if lockfile missing
+LOCKFILE="${$BASE_DIR}/running.lock"
+[ -f "$LOCKFILE" ] || exit 0
 
 if ! screen -ls | grep -q "msh-minecraft"; then
-  #./msh.bin
-  screen -dm -S msh-minecraft ./msh.bin
+  screen -dm -S msh-minecraft "${BASE_DIR}/msh.bin"
 fi

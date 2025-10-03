@@ -1,7 +1,13 @@
 #!/bin/bash
 
-source_dir="./world"
-backup_dir="./backups"
+source "$(dirname "$0")/common.sh"
+
+# quiet exit if lockfile missing
+LOCKFILE="${$BASE_DIR}/running.lock"
+[ -f "$LOCKFILE" ] || exit 0
+
+source_dir="${BASE_DIR}/world"
+backup_dir="${BASE_DIR}/backups"
 
 # Create the backup archive for today
 datestr=$(date +"%Y-%m-%d")

@@ -1,3 +1,6 @@
-export JAVA_HOME=/home/minecraft/jdk-21.0.1
-export PATH=$JAVA_HOME/bin:$PATH
-screen -dm -S msh-minecraft ./msh.bin
+#!/usr/bin/env sh
+
+# create lockfile so that cronjobs will restart server as needed
+touch "$(dirname "$0")/running.lock"
+
+source $(dirname "$0")/monitor.sh
