@@ -9,7 +9,7 @@ wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
 tar -xvf jdk-21_linux-x64_bin.tar.gz
 rm -f jdk-21_linux-x64_bin.tar.gz
 
-source "$(dirname "$0")/common.sh"
+. "$(dirname "$0")/common.sh"
 
 # setup forge minecraft server
 wget -O "forge-installer.jar" https://maven.minecraftforge.net/net/minecraftforge/forge/${FORGE_VERSION}/forge-${FORGE_VERSION}-installer.jar
@@ -25,6 +25,9 @@ sed -E -i 's#("Version"[[:space:]]*:[[:space:]]*")[^"]+(")#\1'"$MC_VERSION"'\2#g
 
 # make backup dir for ./backup.sh script
 mkdir -p "${BASE_DIR}/backups"
+
+# Make all .sh scripts in this folder executable
+chmod +x "${BASE_DIR}"/*.sh
 
 # optionally copy mods to ./mods
 # Run the server manually once before starting msh so that it is setup

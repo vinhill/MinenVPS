@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-source "$(dirname "$0")/common.sh"
+. "$(dirname "$0")/common.sh"
 
 # Forge requires a configured set of both JVM and program arguments.
 # Add custom JVM arguments to the user_jvm_args.txt

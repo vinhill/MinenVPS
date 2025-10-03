@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-source "$(dirname "$0")/common.sh"
+. "$(dirname "$0")/common.sh"
 
 # quiet exit if lockfile missing
 LOCKFILE="${$BASE_DIR}/running.lock"
