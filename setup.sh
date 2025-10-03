@@ -7,7 +7,7 @@ if [[ ! -x "${BASE_DIR}/msh.bin" ]]; then
 fi
 
 # setup local installation of java
-if [[ ! -d "${BASE_DIR}/jdk-21"* ]]; then
+if [[ ! -d "$(dirname "$0")/jdk-21"* ]]; then
     wget https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz
     tar -xvf jdk-21_linux-x64_bin.tar.gz
     rm -f jdk-21_linux-x64_bin.tar.gz
